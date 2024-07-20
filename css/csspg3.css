@@ -1,0 +1,205 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+body{
+    font-family: "arial";
+    display: grid;
+    grid-template-areas: "cabecalho"
+                         "corpo";
+}
+
+.cabecalho{
+    grid-area: cabecalho;
+    display: grid;
+    grid-template-areas: "titulo"
+                         "links";
+    grid-template-columns: 1fr;
+    grid-template-rows: 8vh 5vh;
+    padding-bottom: 1rem;
+}
+
+.titulo{
+    grid-area: titulo;
+    text-align: center;
+    background-color: black;
+    color: white;
+    display: grid;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;   
+}
+
+.titulo p{
+    font-size: 1.5rem;
+    font-weight: bold; 
+    text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.35); 
+}
+
+.links{
+    grid-area: links;
+    display: flex;
+    background-color: rgb(105, 105, 105);
+    color: white;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.2rem;
+    grid-gap: 1rem;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); ;
+}
+
+#direita{
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+}
+
+.corpo{
+    grid-area: corpo;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 65vh);
+    margin-left: 5rem;
+    margin-right: 5rem;
+    background-color: white;    
+}
+
+.area{
+    display: grid;
+    grid-template-areas: "subtitulo subtitulo"
+                         "imagemE    imagemD"
+                         "texto      texto";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 15% 67% 18%;
+    margin-bottom: 1rem;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 0.5rem;
+}
+
+.subtitulo{
+    grid-area: subtitulo;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.subtitulo h2{
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); 
+    font-size: 1.2rem;
+}
+
+.imagemE{
+    grid-area: imagemE;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.imagemD{
+    grid-area: imagemD;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.texto{
+    grid-area: texto;
+    padding: 1rem;
+}
+
+.texto p{
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    border: solid 1px black;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+#secreto{
+    text-align: center;
+}
+
+#secreto a{
+    text-decoration: none;
+    color: rgb(242, 242, 242);
+}
+
+@media screen and (max-width: 768px){
+
+    .cabecalho{
+       margin-bottom: 0.5rem;
+    }
+
+    .titulo p{
+        font-size: 0.9rem;
+    }
+
+    .links{
+        justify-content: space-between;
+    }
+
+    .links a{
+        font-size: 0.7rem; 
+    }
+
+    .links p{
+        font-size: 0.7rem; 
+    }
+    
+    #esquerda{
+        margin-left: 1rem;
+    }
+
+    .esconder{
+        display: none;
+    }
+
+    .corpo{
+        grid-template-rows: repeat(6, 80vh);
+        margin-left: 1rem;
+        margin-right: 1rem;   
+    }
+
+    .area{
+        grid-template-areas: "subtitulo"   
+                             "imagemE"
+                             "imagemD"
+                             "texto";
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 30% 30% 30%;
+        grid-gap: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+                                                      
+    .area h2{
+        font-size: 1rem;
+        padding-top: 0.2rem;
+    }
+
+    .texto{
+        padding: 0.5rem;
+        display: grid;
+        align-items: center;
+    }
+
+    .texto p{
+        font-size: 0.6rem;
+    }
+    
+    #secreto{
+        margin-top: 1rem;
+    }
+}
+

@@ -1,0 +1,178 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+body{
+    font-family: "arial";
+    display: grid;
+    grid-template-areas: "cabecalho"
+                         "corpo";
+}
+
+.cabecalho{
+    grid-area: cabecalho;
+    display: grid;
+    grid-template-areas: "titulo"
+                         "links";
+   grid-template-columns: 1fr;
+   grid-template-rows: 8vh 5vh;
+   padding-bottom: 1rem;
+}
+
+.titulo{
+    grid-area: titulo;
+    text-align: center;
+    background-color: black;
+    display: grid;
+    align-items: center; 
+    color: white; 
+}
+
+.titulo p{
+    font-size: 1.5rem;
+    font-weight: bold; 
+}
+
+.links{
+    grid-area: links;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(105, 105, 105);
+    color: white;
+    font-size: 1.2rem;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); ;
+}
+
+#esquerda{  
+    margin-left: 1rem; 
+    display: flex;
+    justify-content: space-between;
+}
+
+#seguir{
+    margin-right: 1rem;
+}
+
+#direita{
+    margin-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#voltar{
+    margin-right: 1rem;
+}
+
+.corpo{
+    grid-area: corpo;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 60vh);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: white;
+}
+
+.area{
+    display: grid;
+    grid-template-areas: "subtitulo subtitulo"
+                         "texto    imagem";
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 15% 85%;
+    margin-bottom: 1rem;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 0.5rem;
+}
+
+.subtitulo{
+    grid-area: subtitulo;
+    padding: 0.5rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.subtitulo h2{
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.2rem;
+}
+
+.imagem{
+    grid-area: imagem;
+    padding: 1rem;
+}
+
+.texto{
+    grid-area: texto;
+    display: grid;
+    align-items: center;
+    padding: 1rem;
+}
+
+.texto p{
+    font-size: 0.8rem;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    border: solid 1px black;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px){
+
+    .cabecalho{
+       margin-bottom: 0.5rem;
+    }
+    
+    .titulo p{
+        font-size: 0.9rem;
+    }
+    
+    .links a{
+        font-size: 0.7rem; 
+    }
+
+    .links p{
+        font-size: 0.7rem; 
+    }
+    
+    .esconder{
+        display: none;
+    }
+
+    .corpo{
+        grid-template-rows: repeat(8,80vh);
+    }
+
+    .area{
+        grid-template-areas: "subtitulo"
+                             "texto"
+                             "imagem";
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 41% 49%;
+        grid-gap: 0.3rem;
+    }
+
+    .subtitulo h2{
+        font-size: 1rem;
+    }
+    
+    .texto p{      
+        font-size: 0.6rem;
+    }
+}
+
